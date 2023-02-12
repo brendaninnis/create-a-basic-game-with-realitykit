@@ -17,14 +17,7 @@ extension UIColor {
 final class GameSession: NSObject, ObservableObject {
     
     weak var arView: ARView?
-    private var gameboard: AnchorEntity? {
-        didSet {
-            let boardMesh = MeshResource.generateBox(width: 0.5, height: 0.01, depth: 0.5)
-            let boardMaterial = SimpleMaterial(color: .steel, isMetallic: true)
-            let board = ModelEntity(mesh: boardMesh, materials: [boardMaterial])
-            gameboard?.addChild(board)
-        }
-    }
+    private var gameboard: Gameboard?
     
     func configureSession(forView arView: ARView) {
         let config = ARWorldTrackingConfiguration()
@@ -46,8 +39,10 @@ extension GameSession: ARSessionDelegate {
             guard anchor is ARPlaneAnchor else {
                 continue
             }
-            gameboard = AnchorEntity(.anchor(identifier: anchor.identifier))
-            arView?.scene.anchors.append(gameboard!)
+            let gameboard = Gameboard(anchor)
+            arView?.scene.anchors.append(gameboard)
+            arView?.installGestures([.rotation, .translation], for: gameboard)
+            self.gameboard = gameboard
             return
         }
     }
