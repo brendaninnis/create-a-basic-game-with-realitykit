@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		B8E24F532998732D00F60F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E24F522998732D00F60F53 /* AppDelegate.swift */; };
 		B8E24F552998732D00F60F53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E24F542998732D00F60F53 /* ContentView.swift */; };
-		B8E24F572998732D00F60F53 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = B8E24F562998732D00F60F53 /* Experience.rcproject */; };
 		B8E24F592998732F00F60F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E24F582998732F00F60F53 /* Assets.xcassets */; };
 		B8E24F5C2998732F00F60F53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E24F5B2998732F00F60F53 /* Preview Assets.xcassets */; };
+		B8E24F64299873C000F60F53 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E24F63299873C000F60F53 /* GameView.swift */; };
+		B8E24F672998741D00F60F53 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E24F662998741D00F60F53 /* GameSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B8E24F4F2998732D00F60F53 /* Balla Rolla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Balla Rolla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E24F522998732D00F60F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8E24F542998732D00F60F53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B8E24F562998732D00F60F53 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		B8E24F582998732F00F60F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8E24F5B2998732F00F60F53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B8E24F63299873C000F60F53 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B8E24F662998741D00F60F53 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +55,8 @@
 		B8E24F512998732D00F60F53 /* Balla Rolla */ = {
 			isa = PBXGroup;
 			children = (
-				B8E24F522998732D00F60F53 /* AppDelegate.swift */,
-				B8E24F542998732D00F60F53 /* ContentView.swift */,
-				B8E24F562998732D00F60F53 /* Experience.rcproject */,
+				B8E24F652998740600F60F53 /* Game State */,
+				B8E24F622998738D00F60F53 /* UI */,
 				B8E24F582998732F00F60F53 /* Assets.xcassets */,
 				B8E24F5A2998732F00F60F53 /* Preview Content */,
 			);
@@ -68,6 +69,24 @@
 				B8E24F5B2998732F00F60F53 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B8E24F622998738D00F60F53 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B8E24F522998732D00F60F53 /* AppDelegate.swift */,
+				B8E24F542998732D00F60F53 /* ContentView.swift */,
+				B8E24F63299873C000F60F53 /* GameView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B8E24F652998740600F60F53 /* Game State */ = {
+			isa = PBXGroup;
+			children = (
+				B8E24F662998741D00F60F53 /* GameSession.swift */,
+			);
+			path = "Game State";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E24F552998732D00F60F53 /* ContentView.swift in Sources */,
+				B8E24F64299873C000F60F53 /* GameView.swift in Sources */,
+				B8E24F672998741D00F60F53 /* GameSession.swift in Sources */,
 				B8E24F532998732D00F60F53 /* AppDelegate.swift in Sources */,
-				B8E24F572998732D00F60F53 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

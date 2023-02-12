@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  Balla Rolla
 //
 //  Created by Brendan Innis on 2023-02-11.
@@ -8,36 +8,29 @@
 import SwiftUI
 import RealityKit
 
-struct ContentView : View {
+struct GameView: View {
+    @EnvironmentObject var gameSession: GameSession
+    
     var body: some View {
         ARViewContainer().edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    @EnvironmentObject var gameSession: GameSession
     
     func makeUIView(context: Context) -> ARView {
-        
         let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
+        gameSession.configureSession(forView: arView)
         return arView
-        
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {}
     
 }
 
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }
-#endif
